@@ -11,8 +11,8 @@ export function getCategoriesSuccess(categories) {
 export function getCategories() {
     return function (dispatch) {
         const url = 'http://localhost:3000/categories'
-        fetch(url)
-            .then(response => response.json())
-            .then(result => dispatch(getCategoriesSuccess(result)))
+        return fetch(url)
+        .then(response => response.json())
+        .then(result => dispatch(getCategoriesSuccess(result)))
     }
 }
